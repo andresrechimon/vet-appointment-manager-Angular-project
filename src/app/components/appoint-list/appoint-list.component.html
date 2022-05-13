@@ -1,0 +1,15 @@
+<div *ngIf="listAppoint.length === 0" class="card">
+    <div class="card-body">
+        <h5 class="card-title text-center">No hay citas programadas <i style="color: red;" class="fa-solid fa-heart-crack"></i></h5>
+    </div>
+</div>
+
+<div *ngFor="let item of listAppoint; let i = index;" class="card mb-2">
+    <div class="card-body">
+        <p class="card-text"><strong>Nombre: </strong>{{item.name}}</p>
+        <p class="card-text"><strong>Fecha: </strong>{{item.date}}</p>
+        <p class="card-text"><strong>Hora: </strong>{{item.time}}</p>
+        <p class="card-text"><strong>Motivo de consulta: </strong>{{item.symptom}}</p>
+        <button style="width: 100%;" class="btn btn-danger btn-block" (click)="deleteAppointment(i)">ELIMINAR</button>
+    </div>
+</div>
